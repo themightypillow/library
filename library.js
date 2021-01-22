@@ -15,7 +15,7 @@ const myLibrary = [
   new Book("The Lord of the Rings", "J.R.R. Tolkien", 1216, false),
   new Book("Charlotte's Web", "E.B. White", 184, true),
   new Book("Of Mice and Men", "John Steinbeck", 103, true),
-  new Book("Fehrenheit 451", "Ray Bradbury", 194, false),
+  new Book("Fahrenheit 451", "Ray Bradbury", 194, false),
   new Book("The Outsiders", "S.E. Hinton", 192, true),
   new Book("A Tale of Two Cities", "Charles Dickens", 489, false)
 ];
@@ -43,6 +43,9 @@ function addBookToDisplay(book, index) {
   readDisplay.textContent = book.hasRead ? "Read" : "Want to Read";
   removeBtn.textContent = "X"
 
+  removeBtn.addEventListener("click", 
+      (e) => removeBook(e.target.parentElement));
+
   heading.appendChild(titleDisplay);
   heading.appendChild(authorDisplay);
   info.appendChild(pagesDisplay);
@@ -61,6 +64,14 @@ function addBookToLibrary(title, author, pages, hasRead) {
   const newBook = new Book(title, author, pages, hasRead)
   myLibrary.push(newBook);
   addBookToDisplay(newBook, myLibrary.length - 1);
+}
+
+function removeBook(bookNode) {
+  myLibrary.splice(bookNode.dataset.index, 1);
+  booksDisplay.removeChild(bookNode);
+
+  document.querySelectorAll("main > article")
+      .forEach((bookCard, index) => bookCard.setAttribute("data-index", index));
 }
 
 function displayBooks() {
