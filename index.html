@@ -14,15 +14,16 @@
   <main></main>
   <div>
     <form action="">
+      <h2>Add a New Book</h2>
       <label for="title">Title</label>
-      <input id="title" type="text">
+      <input id="title" type="text" required>
       <label for="author">Author</label>
-      <input id="author" type="text">
+      <input id="author" type="text" required>
       <label for="pages">Number of Pages</label>
-      <input id="pages" type="number">
+      <input id="pages" type="number" value="0">
       <div>
-        <label for="hasRead">Read</label>
-        <input id="hasRead" type="checkbox">
+        <label for="has-read">Read</label>
+        <input id="has-read" type="checkbox">
       </div>
       <input id="submit-book" value="Add New Book" type="submit">
     </form>
