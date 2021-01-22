@@ -27,6 +27,23 @@ function Book(title, author, pages, hasRead) {
   this.hasRead = hasRead;
 }
 
+Book.prototype.toggleRead = function() {
+  this.hasRead = !this.hasRead;
+}
+
+Book.prototype.displayRead = function() {
+  return this.hasRead ? "Read" : "Want to Read";
+}
+
+function toggleReadOnClick(bookNode) {
+  const index = bookNode.dataset.index
+  myLibrary[index].toggleRead();
+  const readLabel = document.querySelector(
+      `article[data-index="${index}"] > div > :last-child`
+  );
+  readLabel.textContent = myLibrary[index].displayRead();
+}
+
 function addBookToDisplay(book, index) {
   const bookCard = document.createElement("article");
   const heading = document.createElement("header");
@@ -40,7 +57,11 @@ function addBookToDisplay(book, index) {
   titleDisplay.textContent = book.title;
   authorDisplay.textContent = book.author;
   pagesDisplay.textContent = `${book.pages} pages`;
-  readDisplay.textContent = book.hasRead ? "Read" : "Want to Read";
+  readDisplay.textContent = book.displayRead();
+  readDisplay.classList.add("read-toggle");
+  readDisplay.addEventListener("click", e => {
+    toggleReadOnClick(e.target.parentElement.parentElement);
+  });
   removeBtn.textContent = "X"
 
   removeBtn.addEventListener("click", 

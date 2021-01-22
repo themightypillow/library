@@ -18,6 +18,10 @@ header > button {
   padding: 5px 20px;
 }
 
+header > button:hover {
+  color: blue;
+}
+
 header > button, .book button {
   background: none;
   border: 1px outset black;
@@ -54,6 +58,8 @@ main {
   align-items: center;
   justify-content: space-around;
   height: 15vh;
+  min-height: 125px;
+  max-height: 200px;
   padding: 0 10px;
 }
 
@@ -61,6 +67,15 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.book > div > :first-child {
+  margin-bottom: 4px;
+}
+
+.read-toggle:hover {
+  cursor: pointer;
+  color: blue;
 }
 
 .book h1 {
@@ -74,7 +89,6 @@ main {
 
 .book button:hover {
   color: red;
-  border-color: red;
 }
 
 form {
