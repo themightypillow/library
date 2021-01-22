@@ -1,5 +1,37 @@
+body {
+  font-family: monospace;
+}
+
+body > header > h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+body > header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+body > div {
+  /* display: none; */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
 article h1, article h2, article p {
   margin: 0;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .book {
@@ -8,23 +40,44 @@ article h1, article h2, article p {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  font-family: monospace;
   height: 12vh;
   padding: 0 10px;
 }
 
-.book > div {
+.book > * {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .book h1 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .book h2 {
   font-size: 1rem;
+}
+
+form {
+  position: fixed;
+  top: 15%;
+  left: 25%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+form > * {
+  margin-bottom: 5px;
+}
+
+form > div {
+  display: flex;
+  align-items: center;
+}
+
+form > div > * {
+  margin-right: 5px;
 }
 
 

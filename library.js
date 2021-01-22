@@ -28,7 +28,7 @@ function displayBooks() {
     readDisplay.textContent = book.hasRead ? "Read" : "Want to Read";
 
     heading.appendChild(titleDisplay);
-    info.appendChild(authorDisplay);
+    heading.appendChild(authorDisplay);
     info.appendChild(pagesDisplay);
     info.appendChild(readDisplay);
 
