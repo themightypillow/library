@@ -7,20 +7,14 @@ function Book(title, author, pages, hasRead) {
   this.hasRead = hasRead;
 }
 
-function addBookToLibrary(book) {
-  myLibrary.push(book);
+function addBookToLibrary(title, author, pages, hasRead = false) {
+  myLibrary.push(new Book(title, author, pages, hasRead));
 }
 
-// const book1 = new Book("To Kill a Mockingbird", "Harper Lee", 324, true);
-// const book2 = new Book("Pride and Prejudice", "Jane Austen", 279, false);
-// const book3 = new Book("1984", "George Orwell", 237, false);
-// const book4 = new Book("The Great Gatsby", "F. Scott Fitzgerald", 200, true);
+addBookToLibrary("To Kill a Mockingbird", "Harper Lee", 324, true);
+addBookToLibrary("Pride and Prejudice", "Jane Austen", 279, false);
+addBookToLibrary("1984", "George Orwell", 237, false);
+addBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", 200, true);
 
-// console.log(book1);
-
-// addBookToLibrary(book1);
-// addBookToLibrary(book2);
-// addBookToLibrary(book3);
-// addBookToLibrary(book4);
-
-// console.table(myLibrary);
+console.table(myLibrary);
+console.log(myLibrary[0]);
