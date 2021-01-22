@@ -1,0 +1,30 @@
+article h1, article h2, article p {
+  margin: 0;
+}
+
+.book {
+  border: 1px solid black;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-family: monospace;
+  height: 12vh;
+  padding: 0 10px;
+}
+
+.book > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book h1 {
+  font-size: 1.5rem;
+}
+
+.book h2 {
+  font-size: 1rem;
+}
+
+
