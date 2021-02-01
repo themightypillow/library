@@ -7,6 +7,25 @@ const newBookAuthorInput = document.querySelector("#author");
 const newBookPagesInput = document.querySelector("#pages")
 const newBookHasReadInput = document.querySelector("#has-read");
 
+class Book {
+
+  constructor(title, author, pages, hasRead) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.hasRead = hasRead;
+  }
+
+  toggleRead() {
+    this.hasRead = !this.hasRead;
+  }
+
+  displayRead() {
+    return this.hasRead ? "Read" : "Want to Read";
+  }
+
+}
+
 const myLibrary = [
   new Book("To Kill a Mockingbird", "Harper Lee", 324, true),
   new Book("Pride and Prejudice", "Jane Austen", 279, false),
@@ -20,20 +39,20 @@ const myLibrary = [
   new Book("A Tale of Two Cities", "Charles Dickens", 489, false)
 ];
 
-function Book(title, author, pages, hasRead) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.hasRead = hasRead;
-}
+// function Book(title, author, pages, hasRead) {
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.hasRead = hasRead;
+// }
 
-Book.prototype.toggleRead = function() {
-  this.hasRead = !this.hasRead;
-}
+// Book.prototype.toggleRead = function() {
+//   this.hasRead = !this.hasRead;
+// }
 
-Book.prototype.displayRead = function() {
-  return this.hasRead ? "Read" : "Want to Read";
-}
+// Book.prototype.displayRead = function() {
+//   return this.hasRead ? "Read" : "Want to Read";
+// }
 
 function toggleReadOnClick(bookNode) {
   const index = bookNode.dataset.index
